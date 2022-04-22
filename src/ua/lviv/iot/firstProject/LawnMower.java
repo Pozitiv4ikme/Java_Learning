@@ -1,43 +1,49 @@
 package ua.lviv.iot.firstProject;
 
-public record LawnMower(int grass_level, int engine_power, double fuel_tank_volume, String model, 
-		String developer_company, int year_of_manafacture) {
+public record LawnMower(int grassLevel, int enginePower, double fuelTankVolume, String model,
+						String developerCompany, int yearOfManafacture) {
 	
 	static public final String TYPE = "GrassKiller";
-	
+	//static public final int amount = 3;
+	//private double ratingOfProduct;
+	//private String name;
+
 	public LawnMower() 
 	{
 		this(3, 12, 3.2d, "Out of town", "Bosh", 2019);
 	}
 
-	public LawnMower(int grass_level, int engine_power, double fuel_tank_volume) 
+	public LawnMower(int grassLevel, int enginePower, double fuelTankVolume)
 	{
-		this(grass_level, engine_power, fuel_tank_volume, "Z560X", "Husqvarna", 2022);
+		this(grassLevel, enginePower, fuelTankVolume, "Z560X", "Husqvarna", 2022);
 	}
-	
-	public LawnMower(int grass_level, int engine_power, double fuel_tank_volume, String model, 
-			String developer_company, int year_of_manafacture) 
+
+	public LawnMower(int grassLevel, int enginePower, double fuelTankVolume, String model,
+					 String developerCompany, int yearOfManafacture)
 	{
-		this.grass_level = grass_level; 
-		this.engine_power = engine_power;
-		this.fuel_tank_volume = fuel_tank_volume;
+		this.grassLevel = grassLevel;
+		this.enginePower = enginePower;
+		this.fuelTankVolume = fuelTankVolume;
 		this.model = model;
-		this.developer_company = developer_company;
-		this.year_of_manafacture = year_of_manafacture;
+		this.developerCompany = developerCompany;
+		this.yearOfManafacture = yearOfManafacture;
 	}
 	
 	@Override
 	public String toString() 
 	{
-		String about_all = "Grass mowing width in centimeters - " + grass_level + ", "
-				+ "engine power in watts - " + engine_power + ", model - " + model + 
-				", fuel tank volume - " + fuel_tank_volume + ", developer company is " 
-				+ developer_company + " and year of manafacture " + year_of_manafacture + ".";
-		return about_all;
+		return "Grass mowing width in centimeters - " + grassLevel + ", "
+				+ "engine power in watts - " + enginePower + ", model - " + model +
+				", fuel tank volume - " + fuelTankVolume + ", developer company is "
+				+ developerCompany + " and year of manafacture " + yearOfManafacture + ".";
 	}
 	
 	public static String getStaticField() 
 	{
 		return "Type of lawn-mower - " + TYPE;
 	}
+
+	//public static int getStaticFieldAmount() { return "Amount of all product is " + amount; }
+	//public double setRatingOfProduct() { this.rating = rating; }
+	//public String getThanks() { return "Thank you - " + name + " for purchasing the product in our store!"}
 }
